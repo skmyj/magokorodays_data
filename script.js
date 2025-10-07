@@ -7,3 +7,10 @@ $(document).ready(function(){
     });
   });
  
+<button onclick="history.back()">戻る</button>
+
+  if (history.length > 1) {
+    history.back();
+  } else {
+    window.location.href = "/";
+  }

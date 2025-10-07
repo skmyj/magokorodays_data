@@ -93,6 +93,22 @@ section a {
   height: auto;
 }
 
+.back-btn {
+  display: inline-block;
+  background: #3d2d18;
+  color: #fff;
+  padding: 0.5em 1.2em;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  margin: 3rem auto;
+}
+
+.back-btn:hover {
+  background: #a71919;
+}
+
 @media screen and (min-width:768px) {
 
   /*　画面サイズが768px以上の場合読み込む　*/
