@@ -55,10 +55,110 @@ header li {
   padding: 30px;
 }
 
+nav {
+  /* display: none; */
+  height: 100vh;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  right: -300px;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, .5);
+  transition: transform .5s;
+}
+
+#navBtn {
+  display: none;
+}
+
+#navBtn:checked ~ nav {
+  display: block;
+  transform: translateX(-300px);
+}
+
+.open {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #f9f3eb;
+  border-radius: 2px;
+}
+
+/*humburger button*/
+
+.open::before,
+.open::after {
+  content: "";
+}
+
+.open span,
+.open::before,
+.open::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 30%;
+  width: 40%;
+  border-bottom: 2px solid #f9f3eb;
+  transition: transform .5s;
+}
+
+.open::before {
+  transform: translateY(-8px);
+}
+
+.open::after {
+  transform: translateY(8px);
+}
+
+/*close button*/
+#navBtn:checked + .open span {
+  transform: scaleX(0);
+}
+
+#navBtn:checked + .open::before {
+  transform: rotate(45deg);
+}
+
+#navBtn:checked + .open::after {
+  transform: rotate(-45deg);
+}
+
+#navBtn:checked + .open span,
+#navBtn:checked + .open::before,
+#navBtn:checked + .open::after {
+  border-bottom-color: #EEE;
+}
+
+nav ul {
+  list-style: none;
+  padding-bottom: 1rem;
+  text-align: center;
+  
+}
+
+nav ul li {
+  /* display: inline-block; */
+  margin: 0 10px;
+  padding: 10px 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #EEE;
+}
+
+
 section {
   max-width: 1200px;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 40px;
+  margin-bottom: 40px;
   /* text-align: center; */
   background-color: #f9f3eb;
   margin-right: auto;
@@ -135,7 +235,40 @@ section a {
   h1 {
     font-size: 20pt;
   }
+  h1 {
+    font-size: 20pt;
+  }
+
+  header ul {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    color: #f9f3eb;
+  }
+  
+  nav {
+    display: flex;
+    height: auto;
+    width: 100%;
+    position: static;
+    background-color: transparent;
+  }
+  
+  nav ul li {
+    display: flex;
+  }
+
+  nav ul li a {
+    color: #f9f3eb;
+  }
+
+  #navBtn,
+  .open {
+    display: none;
+  }
 }
+
 
 @media screen and (min-width:1200px) {
 
