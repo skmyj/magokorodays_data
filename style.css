@@ -39,6 +39,7 @@ header h1 {
 header ul {
   margin-top: 20px;
   display: flex;
+  flex-direction: column;
   font-size: 15px;
   color: #f9f3eb;
 }
